@@ -1,0 +1,57 @@
+{
+  "name": "cidadao-ativo-backend",
+  "version": "1.0.0",
+  "description": "Backend do Sistema Cidadão Ativo - Gestão de Solicitações Urbanas",
+  "scripts": {
+    "supabase:start": "npx supabase start",
+    "supabase:stop": "npx supabase stop",
+    "supabase:status": "npx supabase status",
+    "supabase:login": "npx supabase login",
+    "supabase:link": "npx supabase link",
+    "db:push": "npx supabase db push",
+    "db:pull": "npx supabase db pull",
+    "db:reset": "npx supabase db reset",
+    "db:diff": "npx supabase db diff",
+    "db:logs": "npx supabase db logs --follow",
+    "migration:new": "npx supabase migration new",
+    "migration:up": "npx supabase migration up",
+    "storage:create": "npx supabase storage create-bucket",
+    "functions:deploy": "npx supabase functions deploy",
+    "functions:logs": "npx supabase functions logs",
+    "functions:serve": "npx supabase functions serve",
+    "deploy:all": "npm run db:push && npm run functions:deploy",
+    "dev": "npx supabase start",
+    "setup": "npm run supabase:start && npm run db:push && npm run functions:deploy",
+    "test:api": "newman run postman/cidadao-ativo.json -e postman/local.json",
+    "backup": "node scripts/backup.js",
+    "seed": "node scripts/seed.js"
+  },
+  "devDependencies": {
+    "supabase": "^1.142.2",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0",
+    "newman": "^6.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.38.0",
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "supabase",
+    "backend",
+    "api",
+    "postgresql",
+    "cidadao-ativo",
+    "gestao-urbana"
+  ],
+  "author": "Equipe Cidadão Ativo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/cidadao-ativo-backend.git"
+  }
+}
